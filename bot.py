@@ -73,13 +73,13 @@ class TicketCategorySelect(Select):
             guild.me:           discord.PermissionOverwrite(view_channel=True, send_messages=True),
         }
         if support_role:
-    overwrites[support_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
-    admin_role2 = discord.utils.get(guild.roles, name=ADMIN_ROLE_NAME)
-       if admin_role2:
-    overwrites[admin_role2] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
-    helper_role = discord.utils.get(guild.roles, name=HELPER_ROLE_NAME)
-       if helper_role:
-    overwrites[helper_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+            overwrites[support_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+        admin_role2 = discord.utils.get(guild.roles, name=ADMIN_ROLE_NAME)
+        if admin_role2:
+            overwrites[admin_role2] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+        helper_role = discord.utils.get(guild.roles, name=HELPER_ROLE_NAME)
+        if helper_role:
+            overwrites[helper_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
 
         # Создать канал
         channel_name = f"ticket-{user.name}".lower().replace(" ", "-")

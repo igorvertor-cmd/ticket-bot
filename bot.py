@@ -82,7 +82,7 @@ class TicketCategorySelect(Select):
             overwrites[helper_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
 
         # Создать канал
-        channel_name = f"ticket-{user.name}".lower().replace(" ", "-")
+        channel_name = f"Тикет от {user.name}".lower().replace(" ", "-")
         ticket_channel = await discord_category.create_text_channel(
             name=channel_name,
             overwrites=overwrites,

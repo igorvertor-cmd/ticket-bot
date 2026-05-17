@@ -7,21 +7,21 @@ import os
 
 # ===================== НАСТРОЙКИ =====================
 TOKEN = os.getenv("TOKEN")
-CATEGORY_NAME = "Тикеты"           # Категория в Discord где создаются тикеты
+CATEGORY_NAME = "Тикеты"           
 SUPPORT_ROLE_NAME = "Support"
 ADMIN_ROLE_NAME = "Admin"
-HELPER_ROLE_NAME = "Helper"      # Роль, которая видит тикеты
-LOG_CHANNEL_NAME = "ticket-logs"   # Канал для логов
-ARCHIVE_CHANNEL_NAME = "архив-тикетов"  # Канал-ветка для архива (только для админов)
-CLOSE_DELAY = 10                        # Секунд до удаления канала после закрытия
+HELPER_ROLE_NAME = "Helper"      
+LOG_CHANNEL_NAME = "ticket-logs"   
+ARCHIVE_CHANNEL_NAME = "архив-тикетов"  
+CLOSE_DELAY = 10                        
 
 # Ссылки на картинки (замени на свои)
 IMAGE_PANEL  = "https://cdn.discordapp.com/attachments/1497777455199682580/1505353425896865932/grzue2pxqaa94te.jpg?ex=6a0a5120&is=6a08ffa0&hm=f6b288bb8f7f720cb2e28a3ceeb9af8acec7663a9dbfa8aefd83f0cb6fc28c0c&"  # Картинка в панели !panel
 IMAGE_TICKET = "https://cdn.discordapp.com/attachments/1497777455199682580/1505353425896865932/grzue2pxqaa94te.jpg?ex=6a0a5120&is=6a08ffa0&hm=f6b288bb8f7f720cb2e28a3ceeb9af8acec7663a9dbfa8aefd83f0cb6fc28c0c&"  # Картинка внутри тикета
 
 # Динамические войсы
-VOICE_LOBBY_NAME     = "➕・Ожидание администратора"  # Канал-триггер (1 слот)
-VOICE_CATEGORY_NAME  = "Приватные войсы"              # Категория для создаваемых войсов
+VOICE_LOBBY_NAME     = "➕・Ожидание администратора"  
+VOICE_CATEGORY_NAME  = "Приватные войсы"              
 # =====================================================
 
 # Словарь: голос канал → владелец (для авто-удаления)

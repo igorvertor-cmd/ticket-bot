@@ -143,7 +143,7 @@ class OpenTicketView(View):
         # Проверить, нет ли уже открытого тикета
         existing = discord.utils.get(
             interaction.guild.text_channels,
-            name=f"ticket-{interaction.user.name}".lower().replace(" ", "-")
+            name=f"тикет от-{interaction.user.name}".lower().replace(" ", "-")
         )
         if existing:
             await interaction.response.send_message(

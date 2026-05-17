@@ -3,6 +3,7 @@ from discord.ext import commands
 from discord.ui import Button, View, Select
 import asyncio
 import io
+import os
 
 # ===================== НАСТРОЙКИ =====================
 TOKEN = os.getenv("TOKEN")

@@ -8,7 +8,9 @@ import os
 # ===================== НАСТРОЙКИ =====================
 TOKEN = os.getenv("TOKEN")
 CATEGORY_NAME = "Тикеты"           # Категория в Discord где создаются тикеты
-SUPPORT_ROLE_NAME = "Support"      # Роль, которая видит тикеты
+SUPPORT_ROLE_NAME = "Support"
+ADMIN_ROLE_NAME = "Admin"
+HELPER_ROLE_NAME = "Helper"      # Роль, которая видит тикеты
 LOG_CHANNEL_NAME = "ticket-logs"   # Канал для логов
 ARCHIVE_CHANNEL_NAME = "архив-тикетов"  # Канал-ветка для архива (только для админов)
 CLOSE_DELAY = 10                        # Секунд до удаления канала после закрытия
@@ -71,7 +73,13 @@ class TicketCategorySelect(Select):
             guild.me:           discord.PermissionOverwrite(view_channel=True, send_messages=True),
         }
         if support_role:
-            overwrites[support_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+    overwrites[support_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+    admin_role2 = discord.utils.get(guild.roles, name=ADMIN_ROLE_NAME)
+       if admin_role2:
+    overwrites[admin_role2] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
+    helper_role = discord.utils.get(guild.roles, name=HELPER_ROLE_NAME)
+       if helper_role:
+    overwrites[helper_role] = discord.PermissionOverwrite(view_channel=True, send_messages=True)
 
         # Создать канал
         channel_name = f"ticket-{user.name}".lower().replace(" ", "-")
